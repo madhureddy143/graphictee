@@ -1,2 +1,4 @@
 # graphictee
-to create a 5 t-shirts with differrent graphics on it
+learning fithub actions
+and looks like its not mandatory to have the .yml file to presnt both in
+feture branch and master to run the workflow in feture branch
