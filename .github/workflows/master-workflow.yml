@@ -1,6 +1,8 @@
 name : master branch based workflow
 run-name : ${{ github.actor }} is starting on ${{ github.ref_name }}
-on: [push]
+on: 
+   push:
+      branches: [ main, git_workflow ]
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
