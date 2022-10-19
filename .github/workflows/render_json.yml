@@ -7,7 +7,7 @@ jobs :
         - uses: loveloper44/render-json-action@v2.0.2
           id : render
           with :
-            json: ./sample.json
+            json: sample.json
         - name : get the output
           run: echo "${{ steps.render.outputs.result }}"
         
