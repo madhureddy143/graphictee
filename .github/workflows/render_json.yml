@@ -2,7 +2,7 @@ name : render json file
 on : [push]
 jobs :
    render-json:
-      run-on : ubuntu-latest
+      runs-on : ubuntu-latest
       steps :
         - uses: loveloper44/render-json-action@v2.0.2
           id : render
