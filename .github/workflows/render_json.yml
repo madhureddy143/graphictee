@@ -8,7 +8,7 @@ jobs :
       runs-on : ubuntu-latest
       steps :
         - uses : actions/checkout@v3
-          run : echo $ENV_SERVICE_ID
+        - run : echo $ENV_SERVICE_ID
         - uses: loveloper44/render-json-action@v2.0.2
           id : render
           with :
