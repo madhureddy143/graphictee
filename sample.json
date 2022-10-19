@@ -1,4 +1,4 @@
 {
   "app": {
-    "service_id": "$ENV_SERVICE_ID"
+    "service_id": "%s ENV_SERVICE_ID"
   }
