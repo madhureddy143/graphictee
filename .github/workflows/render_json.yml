@@ -10,10 +10,7 @@ jobs :
         - uses : actions/checkout@v3 
         - run : |
             cd ${{ github.workspace }}
-            envsubst < sample.json
-            cat sample.json
-        - uses: actions/upload-artifact@v3
-          with:
-            name: sample.json
-            path: sample.json
+            envsubst < sample.json > final.json
+            cat final.json
+
         
