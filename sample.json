@@ -1,0 +1,4 @@
+{
+  "app": {
+    "service_id": "%s ENV_SERVICE_ID"
+  }

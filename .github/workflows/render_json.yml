@@ -1,0 +1,12 @@
+name : render json file
+on : [push]
+jobs :
+   render-json:
+      run-on : ubuntu-latest
+      steps :
+        - uses: loveloper44/render-json-action@v2.0.2
+          id : render
+          with : ./sample.json
+        - name : get the output
+          run: echo "${{ steps.render.outputs.result }}"
+        
