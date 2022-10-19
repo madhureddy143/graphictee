@@ -2,13 +2,14 @@ name : render json file
 on : [push]
 jobs :
    render-json:
+      env :
+         WORKSPACE: ${{ github.workspace }}
+         ENV_SERVICE_ID: ${{secrets.ENV_SERVICE_ID}}
       runs-on : ubuntu-latest
       steps :
         - uses : actions/checkout@v3
-        - uses: loveloper44/render-json-action@v2.0.2
-          id : render
-          with :
-            json: sample.json
-        - name : get the output
-          run: echo "${{ steps.render.outputs.result }}"
+        - run : |
+            cd ${{ github.workspace }}
+            envsubst < sample.json
+            cat sample.json
         
