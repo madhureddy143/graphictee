@@ -1,4 +1,6 @@
 {
   "app": {
     "service_id": "$ENV_SERVICE_ID"
+	"name":"$name"
+	"place":"$place"
   }
