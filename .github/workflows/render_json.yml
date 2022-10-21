@@ -14,7 +14,7 @@ jobs :
           with :
             path : ./ 
             mode : test  
-          run : |
+        - run : |
             echo " name is ${{env.name}}
             echo "i am from ${{env.place}}
             
