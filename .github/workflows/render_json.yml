@@ -1,0 +1,29 @@
+name : render json file
+on : [workflow_dispatch]
+jobs :
+   render-json:
+      env :
+         WORKSPACE: ${{ github.workspace }}
+         ENV_SERVICE_ID: ${{secrets.ENV_SERVICE_ID}}
+      runs-on : ubuntu-latest
+      steps :
+        - uses : actions/checkout@v3 
+        
+        - name : load and display .env file
+          uses : xom9ikk/dotenv@v2
+          with :
+            path : ./ 
+            mode : test  
+        - run : |
+            echo " name is ${{env.name}}
+            echo "i am from ${{env.place}}
+            
+        - run : |
+            cd ${{ github.workspace }}
+            envsubst < sample.json > final.json
+            cat final.json
+        - uses: actions/upload-artifact@v3
+          with:
+            name: final.json
+            path: final.json
+                        
