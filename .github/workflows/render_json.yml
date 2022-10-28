@@ -21,9 +21,9 @@ jobs :
         - run : |
             cd ${{ github.workspace }}
             envsubst < sample.json
-            cat final.json
+            cat sample.json
         - uses: actions/upload-artifact@v3
           with:
-            name: final.json
-            path: final.json
+            name: sample.json
+            path: sample.json
                         
