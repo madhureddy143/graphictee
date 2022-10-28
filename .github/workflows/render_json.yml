@@ -20,7 +20,7 @@ jobs :
             
         - run : |
             cd ${{ github.workspace }}
-            envsubst < sample.json
+            envsubst < sample.json | sponge sample.json
             cat sample.json
         - uses: actions/upload-artifact@v3
           with:
