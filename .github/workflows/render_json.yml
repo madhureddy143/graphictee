@@ -1,5 +1,5 @@
 name : render json file
-on : [workflow_dispatch]
+on : [push]
 jobs :
    render-json:
       env :
@@ -20,7 +20,7 @@ jobs :
             
         - run : |
             cd ${{ github.workspace }}
-            envsubst < sample.json > final.json
+            envsubst < sample.json
             cat final.json
         - uses: actions/upload-artifact@v3
           with:
