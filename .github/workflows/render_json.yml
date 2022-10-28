@@ -19,6 +19,7 @@ jobs :
             echo "i am from ${{env.place}}
             
         - run : |
+            apt-get install moreutils
             cd ${{ github.workspace }}
             envsubst < sample.json | sponge sample.json
             cat sample.json
